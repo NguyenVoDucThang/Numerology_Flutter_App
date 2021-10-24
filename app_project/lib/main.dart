@@ -13,7 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Numerology',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.purple[800],
+        appBarTheme: AppBarTheme(
+          color: Colors.purple[800],
+        ),
+        fontFamily: "Helvetica",
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(fontSize: 16),
+        ),
       ),
       home: const MyHomePage(title: 'Numerology'),
     );
@@ -34,6 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      body: const Center(
+        child: Text("Hello world"),
       ),
     );
   }
