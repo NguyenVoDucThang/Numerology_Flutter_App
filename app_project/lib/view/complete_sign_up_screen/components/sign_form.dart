@@ -1,3 +1,5 @@
+import 'package:app_project/models/main_number.dart';
+import 'package:app_project/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,11 +30,11 @@ class _SignFormState extends State<SignForm> {
       DatePicker.showDatePicker(context,
           showTitleActions: true,
           minTime: DateTime(2018, 3, 5),
-          maxTime: DateTime(2021, 6, 7), onChanged: (date) {
-        print('change $date');
-      }, onConfirm: (date) {
-        print('confirm $date');
-      }, currentTime: DateTime.now(), locale: LocaleType.zh);
+          maxTime: DateTime(2021, 6, 7),
+          onChanged: (date) {},
+          onConfirm: (date) {},
+          currentTime: DateTime.now(),
+          locale: LocaleType.zh);
     }
   }
 
@@ -85,12 +87,8 @@ class _SignFormState extends State<SignForm> {
           ),
           const SizedBox(height: 36),
           OrangeButton(
-            text: 'Continue',
-            onPress: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-              } else {}
-            },
+            text: 'Tiếp tục',
+            onPress: routeToMeaningNumberScreen,
             isSolid: true,
           ),
         ],
@@ -101,6 +99,7 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildNameFormField() {
     final validCharacters = RegExp(r'^[a-zA-Z]+$');
     return TextFormField(
+      textCapitalization: TextCapitalization.words,
       onSaved: (newValue) => name = newValue!,
       onChanged: (value) {
         if (validCharacters.hasMatch(value) &&
@@ -109,10 +108,11 @@ class _SignFormState extends State<SignForm> {
             errors.remove('Invalid characters in your name');
           });
         }
-        return null;
+        return;
       },
       validator: (value) {
-        if (!validCharacters.hasMatch(value!) && !errors.contains('Invalid characters in your name')) {
+        if (!validCharacters.hasMatch(value!) &&
+            !errors.contains('Invalid characters in your name')) {
           setState(() {
             errors.add('Invalid characters in your name');
           });
@@ -120,8 +120,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        hintText: 'Enter your name',
-        labelText: 'Name',
+        hintText: 'Nhập tên của bạn',
+        labelText: 'Họ và tên',
         suffixIcon: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
           child: SvgPicture.asset(
@@ -178,8 +178,8 @@ class _SignFormState extends State<SignForm> {
         }
       },
       decoration: InputDecoration(
-        hintText: 'Enter your birthday',
-        labelText: 'Birthday',
+        hintText: 'Nhập ngày sinh của bạn',
+        labelText: 'Ngày sinh',
         suffixIcon: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
           child: SvgPicture.asset(
@@ -211,6 +211,20 @@ class _SignFormState extends State<SignForm> {
           gapPadding: 10,
         ),
       ),
+    );
+  }
+
+  void routeToMeaningNumberScreen() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+    } else {}
+    MainNumber numer = MainNumber(
+      name: name,
+      birthday: (birthday as DateTime),
+    );
+    Navigator.of(context).pushNamed(
+      MainScreen.routeName,
+      arguments: numer,
     );
   }
 }

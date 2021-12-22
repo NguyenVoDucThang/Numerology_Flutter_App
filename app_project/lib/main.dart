@@ -1,6 +1,7 @@
 import 'package:app_project/view/complete_sign_up_screen/get_information_screen.dart';
 import 'package:app_project/view/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import './screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,9 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Numerology'),
       routes: {
-        '/get_information' : (context) => GetInformationScreen(),
+        GetInformationScreen.routeName: (context) =>
+            const GetInformationScreen(),
+        MainScreen.routeName: (context) => const MainScreen(),
       },
     );
   }
@@ -43,6 +46,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return OnBoardingScreen();
+    return const OnBoardingScreen();
   }
 }

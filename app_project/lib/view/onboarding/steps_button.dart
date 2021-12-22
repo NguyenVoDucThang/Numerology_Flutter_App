@@ -8,8 +8,7 @@ class StepsButton extends StatefulWidget {
     required this.page,
     required List<OnBoardingModel> list,
     required PageController controller,
-  })
-      : _list = list,
+  })  : _list = list,
         _controller = controller,
         super(key: key);
 
@@ -21,9 +20,6 @@ class StepsButton extends StatefulWidget {
 }
 
 class _StepsButtonState extends State<StepsButton> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +40,8 @@ class _StepsButtonState extends State<StepsButton> {
           Center(
             child: GestureDetector(
               onTap: () {
-                if (widget.page < widget._list.length && widget.page != widget._list.length - 1) {
+                if (widget.page < widget._list.length &&
+                    widget.page != widget._list.length - 1) {
                   setState(() {
                     widget.page = widget.page + 1;
                   });
