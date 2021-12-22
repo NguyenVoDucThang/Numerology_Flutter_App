@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'animation.dart';
 import 'sign_form.dart';
-import 'social_button.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -16,12 +14,12 @@ class Body extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
-            children: [
-              const SizedBox(height: 36),
+            children: const [
+              SizedBox(height: 36),
               FadeAnimation(
                 0.4,
-                const Text(
-                  'About You',
+                Text(
+                  'About you',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 28,
@@ -29,11 +27,11 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               FadeAnimation(
                 0.5,
-                const Text(
-                  'Tell us about you\nWe will get your number and meaning',
+                Text(
+                  'Tell me about yourself\nI\'ll show your number and also its meaning',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     height: 1.5,
@@ -43,9 +41,9 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 46),
+              SizedBox(height: 46),
               FadeAnimation(0.6, SignForm()),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
             ],
           ),
         ),

@@ -28,7 +28,7 @@ class OnBoardingMainContent extends StatelessWidget {
               width: 320,
             ),
           ),
-          const SizedBox(height: 35),
+          // const SizedBox(height: 35),
           FadeAnimation(
             0.5,
             Text(
@@ -36,11 +36,11 @@ class OnBoardingMainContent extends StatelessWidget {
               style: const TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w400,
-                fontSize: 28,
+                fontSize: 24,
               ),
             ),
           ),
-          const SizedBox(height: 12),
+          // const SizedBox(height: 12),
           FadeAnimation(
             0.5,
             Text(
@@ -50,7 +50,7 @@ class OnBoardingMainContent extends StatelessWidget {
                 color: Colors.black45,
                 fontWeight: FontWeight.w300,
                 height: 1.3,
-                fontSize: 22,
+                fontSize: 18,
               ),
             ),
           )

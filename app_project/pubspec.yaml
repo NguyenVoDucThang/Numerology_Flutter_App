@@ -40,6 +40,7 @@ dependencies:
   intl: ^0.17.0
   gender_picker: ^1.1.0
   flutter_svg: ^0.23.0+1
+  numerology: ^0.0.7
 
 dev_dependencies:
   flutter_test:
