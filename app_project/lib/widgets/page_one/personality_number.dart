@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_project/models/main_number.dart';
 import 'package:app_project/widgets/page_one/animation.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +23,12 @@ class PersonalityNumberItem extends StatelessWidget {
           const SizedBox(
             width: double.infinity,
             child: Text(
-              "Personality Number",
+              "PERSONALITY NUMBER",
               style: TextStyle(
+                fontFamily: 'Magic',
                 fontSize: 35,
-                fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(230, 230, 230, 97),
+                fontWeight: FontWeight.w600,
+                color: Color(0xfff1e7fe),
               ),
               textAlign: TextAlign.center,
             ),
@@ -44,16 +46,24 @@ class PersonalityNumberItem extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 50),
-        FadeAnimation(
-          1,
-          Text(
-            number.getMeaningOfPersonality(myNumber),
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Color.fromRGBO(230, 230, 230, 97),
+        Center(
+          child: SizedBox(
+            width: 380,
+            child: AnimatedTextKit(
+              totalRepeatCount: 1,
+              animatedTexts: [
+                TyperAnimatedText(
+                  number.getMeaningOfPersonality(myNumber),
+                  textAlign: TextAlign.center,
+                  textStyle: const TextStyle(
+                    fontSize: 20.0,
+                    height: 1.3,
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xfff1e7fe),
+                  ),
+                ),
+              ],
             ),
-            textAlign: TextAlign.center,
           ),
         ),
         const Spacer(),

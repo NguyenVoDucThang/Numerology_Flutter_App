@@ -41,6 +41,7 @@ dependencies:
   gender_picker: ^1.1.0
   flutter_svg: ^0.23.0+1
   numerology: ^0.0.7
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -79,13 +80,9 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: Helvetica
-    fonts:
-      - asset: assets/fonts/Helvetica-Bold.ttf
-        weight: 400
-      - asset: assets/fonts/Helvetica.ttf
-      - asset: assets/fonts/Helvetica-BoldOblique.tff
-      - asset: assets/fonts/helvetica-Oblique.tff    
+  fonts:
+    - family: Magic
+      fonts:
+        - asset: assets/fonts/QuiteMagicalRegular-8VA2.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

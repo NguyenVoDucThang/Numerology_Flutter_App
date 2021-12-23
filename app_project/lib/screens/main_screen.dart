@@ -22,35 +22,41 @@ class _MainScreenState extends State<MainScreen> {
         ModalRoute.of(context)!.settings.arguments as MainNumber;
 
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(100, 101, 236, 1),
-      body: PageView(
-        controller: controller,
-        scrollDirection: Axis.vertical,
-        children: [
-          LifePathNumberItem(
-            number: number,
-          ),
-          AttitudeNumberItem(
-            number: number,
-          ),
-          DestinyNumberItem(
-            number: number,
-          ),
-          ExpressionNumberItem(
-            number: number,
-          ),
-          PersonalityNumberItem(
-            number: number,
-          ),
-          SoulUrgeNumberItem(
-            number: number,
-          ),
-        ],
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [Colors.purple, Colors.blue])),
+        child: PageView(
+          controller: controller,
+          scrollDirection: Axis.vertical,
+          children: [
+            LifePathNumberItem(
+              number: number,
+            ),
+            AttitudeNumberItem(
+              number: number,
+            ),
+            DestinyNumberItem(
+              number: number,
+            ),
+            ExpressionNumberItem(
+              number: number,
+            ),
+            PersonalityNumberItem(
+              number: number,
+            ),
+            SoulUrgeNumberItem(
+              number: number,
+            ),
+          ],
+          onPageChanged: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

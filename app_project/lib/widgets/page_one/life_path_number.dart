@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_project/models/main_number.dart';
 import 'package:app_project/view/complete_sign_up_screen/components/animation.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:numerology/numerology.dart';
 
 class LifePathNumberItem extends StatelessWidget {
   final MainNumber number;
+
   const LifePathNumberItem({Key? key, required this.number}) : super(key: key);
 
   @override
@@ -15,22 +17,23 @@ class LifePathNumberItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Spacer(),
-        FadeAnimation(
+        const FadeAnimation(
           0.6,
-          const SizedBox(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              "Life Path Number",
+              "LIFE PATH NUMBER",
               style: TextStyle(
+                fontFamily: 'Magic',
                 fontSize: 35,
-                fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(230, 230, 230, 97),
+                fontWeight: FontWeight.w600,
+                color: Color(0xfff1e7fe),
               ),
               textAlign: TextAlign.center,
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 30),
         FadeAnimation(
           0.8,
           Center(
@@ -41,19 +44,39 @@ class LifePathNumberItem extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 50),
-        FadeAnimation(
-          1,
-          Text(
-            number.getMeaningOfLifePath(myNumber),
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Color.fromRGBO(230, 230, 230, 97),
+        const SizedBox(height: 30),
+        Center(
+          child: SizedBox(
+            width: 380,
+            child: AnimatedTextKit(
+              totalRepeatCount: 1,
+              animatedTexts: [
+                TyperAnimatedText(
+                  number.getMeaningOfLifePath(myNumber),
+                  textAlign: TextAlign.center,
+                  textStyle: const TextStyle(
+                    fontSize: 20.0,
+                    height: 1.3,
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xfff1e7fe),
+                  ),
+                ),
+              ],
             ),
-            textAlign: TextAlign.center,
           ),
         ),
+        // FadeAnimation(
+        //   1,
+        //   Text(
+        //     number.getMeaningOfLifePath(myNumber),
+        //     style: const TextStyle(
+        //       fontSize: 16,
+        //       fontWeight: FontWeight.w500,
+        //       color: Color.fromRGBO(230, 230, 230, 97),
+        //     ),
+        //     textAlign: TextAlign.center,
+        //   ),
+        // ),
         const Spacer(),
       ],
     );

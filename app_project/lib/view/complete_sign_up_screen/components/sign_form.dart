@@ -87,7 +87,7 @@ class _SignFormState extends State<SignForm> {
           ),
           const SizedBox(height: 36),
           OrangeButton(
-            text: 'Tiếp tục',
+            text: 'Continue',
             onPress: routeToMeaningNumberScreen,
             isSolid: true,
           ),
@@ -120,8 +120,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        hintText: 'Nhập tên của bạn',
-        labelText: 'Họ và tên',
+        hintText: 'Enter your full name',
+        labelText: 'Name',
         suffixIcon: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
           child: SvgPicture.asset(
@@ -178,8 +178,8 @@ class _SignFormState extends State<SignForm> {
         }
       },
       decoration: InputDecoration(
-        hintText: 'Nhập ngày sinh của bạn',
-        labelText: 'Ngày sinh',
+        hintText: 'Enter your birthday',
+        labelText: 'Birthday',
         suffixIcon: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
           child: SvgPicture.asset(
