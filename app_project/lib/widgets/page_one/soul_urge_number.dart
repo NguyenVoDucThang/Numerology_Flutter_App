@@ -33,7 +33,7 @@ class SoulUrgeNumberItem extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 30),
         FadeAnimation(
           0.8,
           Center(
@@ -44,7 +44,7 @@ class SoulUrgeNumberItem extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 50),
+        const SizedBox(height: 30),
         Center(
           child: SizedBox(
             width: 380,
