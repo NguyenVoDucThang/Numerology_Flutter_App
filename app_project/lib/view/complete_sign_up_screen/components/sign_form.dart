@@ -1,5 +1,5 @@
 import 'package:app_project/models/main_number.dart';
-import 'package:app_project/screens/main_screen.dart';
+import 'package:app_project/view/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';

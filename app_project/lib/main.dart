@@ -1,7 +1,7 @@
 import 'package:app_project/view/complete_sign_up_screen/get_information_screen.dart';
 import 'package:app_project/view/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import './screens/main_screen.dart';
+import 'package:app_project/view/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
