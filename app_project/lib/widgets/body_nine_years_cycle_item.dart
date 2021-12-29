@@ -1,49 +1,49 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_project/models/main_number.dart';
-import 'package:app_project/view/complete_sign_up_screen/components/animation.dart';
 import 'package:flutter/material.dart';
-import 'package:numerology/numerology.dart';
 
-class DestinyNumberItem extends StatelessWidget {
-  final MainNumber number;
-  const DestinyNumberItem({Key? key, required this.number}) : super(key: key);
+import 'animation.dart';
+
+class BodyNineYearsCycleItem extends StatelessWidget {
+  final String script;
+
+  const BodyNineYearsCycleItem({
+    Key? key,
+    required this.script,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final nc = NumerologyCalculator();
-    final myNumber = nc.destinyNumber(number.birthday);
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Spacer(),
-        const FadeAnimation(
+        FadeAnimation(
+          0.8,
+          Center(
+            child: Image.asset(
+              'assets/images/9 year cycle.png',
+              height: 400,
+              width: 400,
+            ),
+          ),
+        ),
+        const SizedBox(height: 25),
+        FadeAnimation(
           0.6,
-          SizedBox(
+          const SizedBox(
             width: double.infinity,
             child: Text(
-              "DESTINY NUMBER",
+              'Nine Years Cycle',
               style: TextStyle(
                 fontFamily: 'Magic',
-                fontSize: 35,
+                fontSize: 40,
                 fontWeight: FontWeight.w600,
-                color: Color(0xfff1e7fe),
+                color: Color.fromRGBO(249,213,19,1),
               ),
               textAlign: TextAlign.center,
             ),
           ),
         ),
-        const SizedBox(height: 30),
-        FadeAnimation(
-          0.8,
-          Center(
-            child: Image.asset(
-              number.getUrlImage(myNumber),
-              height: 200,
-              width: 200,
-            ),
-          ),
-        ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 25),
         Center(
           child: SizedBox(
             width: 380,
@@ -51,7 +51,7 @@ class DestinyNumberItem extends StatelessWidget {
               totalRepeatCount: 1,
               animatedTexts: [
                 TyperAnimatedText(
-                  number.getMeaningOfDestiny(myNumber),
+                  script,
                   textAlign: TextAlign.center,
                   textStyle: const TextStyle(
                     fontSize: 20.0,
