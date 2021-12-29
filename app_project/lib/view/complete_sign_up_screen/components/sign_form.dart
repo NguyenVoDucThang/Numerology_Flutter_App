@@ -3,6 +3,7 @@ import 'package:app_project/view/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'form_error.dart';
 import 'orange_button.dart';
 import 'package:intl/intl.dart';
@@ -218,13 +219,9 @@ class _SignFormState extends State<SignForm> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     } else {}
-    MainNumber numer = MainNumber(
-      name: name,
-      birthday: (birthday as DateTime),
-    );
-    Navigator.of(context).pushNamed(
-      MainScreen.routeName,
-      arguments: numer,
-    );
+    var numerology = Provider.of<Numerology>(context, listen: false);
+    numerology.setName(name);
+    numerology.setBirthday(birthday!);
+    Navigator.of(context).pushNamed(MainScreen.routeName);
   }
 }

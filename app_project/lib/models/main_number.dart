@@ -1,12 +1,12 @@
+import 'package:flutter/foundation.dart';
+import 'package:numerology/numerology.dart';
+import 'package:provider/provider.dart';
+
 class MainNumber {
-  final String name;
-  final DateTime birthday;
+  String name;
+  DateTime birthday;
 
   MainNumber({required this.name, required this.birthday});
-
-  int transString(String character) {
-    return 0;
-  }
 
   String getUrlImage(int number) {
     switch (number) {
@@ -194,5 +194,22 @@ class MainNumber {
         return 'The 9 Heart\'s Desire number indicates your tendency toward philanthropism and idealism, and causes that help advance the human race and improve the world as a whole. You can be sensitive and emotional, are more likely to be a perfectionist, and crave approval from the masses for your good deeds and achievements.';
     }
     return "";
+  }
+}
+
+class Numerology with ChangeNotifier {
+  MainNumber numerology = MainNumber(
+    birthday: DateTime.now(),
+    name: 'Nguyen Vo Duc Thang',
+  );
+
+  void setName (String newName) {
+    numerology.name = newName;
+    notifyListeners();
+  }
+
+  void setBirthday (DateTime newBirthday) {
+    numerology.birthday = newBirthday;
+    notifyListeners();
   }
 }

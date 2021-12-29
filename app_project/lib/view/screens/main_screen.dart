@@ -1,11 +1,8 @@
 import 'package:app_project/models/main_number.dart';
-import 'package:app_project/widgets/page_one/attitude_number.dart';
-import 'package:app_project/widgets/page_one/destiny_number.dart';
-import 'package:app_project/widgets/page_one/expression_number.dart';
-import 'package:app_project/widgets/page_one/life_path_number.dart';
-import 'package:app_project/widgets/page_one/personality_number.dart';
-import 'package:app_project/widgets/page_one/soul_urge_number.dart';
+import 'package:app_project/widgets/description_number_item.dart';
 import 'package:flutter/material.dart';
+import 'package:numerology/numerology.dart';
+import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -18,8 +15,15 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    MainNumber number =
-        ModalRoute.of(context)!.settings.arguments as MainNumber;
+    final number = Provider.of<Numerology>(context, listen: false).numerology;
+    var nc = NumerologyCalculator();
+
+    var lifePathNumber = nc.lifePathNumber(number.birthday);
+    var attitudeNumber = nc.attitudeNumber(number.birthday);
+    var destinyNumber = nc.destinyNumber(number.birthday);
+    var expressionNumber = nc.expressionNumber(number.name);
+    var personalityNumber = nc.personalityNumnber(number.name);
+    var soulUrgeNumber = nc.soulUrgeNumber(number.name);
 
     return Scaffold(
       body: Container(
@@ -32,23 +36,35 @@ class _MainScreenState extends State<MainScreen> {
           controller: controller,
           scrollDirection: Axis.vertical,
           children: [
-            LifePathNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Life Path Number',
+              description: number.getMeaningOfLifePath(lifePathNumber),
+              number: number.getUrlImage(lifePathNumber),
             ),
-            AttitudeNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Attitude Number',
+              description: number.getMeaningOfLifePath(attitudeNumber),
+              number: number.getUrlImage(attitudeNumber),
             ),
-            DestinyNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Destiny Number',
+              description: number.getMeaningOfLifePath(destinyNumber),
+              number: number.getUrlImage(destinyNumber),
             ),
-            ExpressionNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Expression Number',
+              description: number.getMeaningOfLifePath(expressionNumber),
+              number: number.getUrlImage(expressionNumber),
             ),
-            PersonalityNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Personality Number',
+              description: number.getMeaningOfLifePath(personalityNumber),
+              number: number.getUrlImage(personalityNumber),
             ),
-            SoulUrgeNumberItem(
-              number: number,
+            DescriptionNumberItem(
+              title: 'Soul Urge Number',
+              description: number.getMeaningOfLifePath(soulUrgeNumber),
+              number: number.getUrlImage(soulUrgeNumber),
             ),
           ],
           onPageChanged: (index) {
