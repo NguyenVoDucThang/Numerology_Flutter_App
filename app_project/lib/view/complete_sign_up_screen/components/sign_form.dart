@@ -56,9 +56,10 @@ class _SignFormState extends State<SignForm> {
   }
 
   TextEditingController birthdayController = TextEditingController();
-
+  late Numerology numerologyData;
   @override
   Widget build(BuildContext context) {
+    numerologyData = Provider.of<Numerology>(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -216,6 +217,7 @@ class _SignFormState extends State<SignForm> {
   }
 
   void routeToMeaningNumberScreen() {
+    numerologyData.changeGetNumberStatus();
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     } else {}

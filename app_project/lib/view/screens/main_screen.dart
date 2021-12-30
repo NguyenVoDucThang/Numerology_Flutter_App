@@ -1,6 +1,8 @@
 import 'package:app_project/models/main_number.dart';
 import 'package:app_project/widgets/description_number_item.dart';
+import 'package:app_project/widgets/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:numerology/numerology.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +15,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     final number = Provider.of<Numerology>(context, listen: false).numerology;
@@ -26,53 +30,71 @@ class _MainScreenState extends State<MainScreen> {
     var soulUrgeNumber = nc.soulUrgeNumber(number.name);
 
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.purple, Colors.blue])),
-        child: PageView(
-          controller: controller,
-          scrollDirection: Axis.vertical,
-          children: [
-            DescriptionNumberItem(
-              title: 'Life Path Number',
-              description: number.getMeaningOfLifePath(lifePathNumber),
-              number: number.getUrlImage(lifePathNumber),
+      key: _scaffoldKey,
+      drawer: const SizedBox(
+        width: 250,
+        child: NavigationDrawerWidget(),
+      ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                    colors: [Colors.purple, Colors.blue])),
+            child: PageView(
+              controller: controller,
+              scrollDirection: Axis.vertical,
+              children: [
+                DescriptionNumberItem(
+                  title: 'Life Path Number',
+                  description: number.getMeaningOfLifePath(lifePathNumber),
+                  image: number.getUrlImage(lifePathNumber),
+                ),
+                DescriptionNumberItem(
+                  title: 'Attitude Number',
+                  description: number.getMeaningOfLifePath(attitudeNumber),
+                  image: number.getUrlImage(attitudeNumber),
+                ),
+                DescriptionNumberItem(
+                  title: 'Destiny Number',
+                  description: number.getMeaningOfLifePath(destinyNumber),
+                  image: number.getUrlImage(destinyNumber),
+                ),
+                DescriptionNumberItem(
+                  title: 'Expression Number',
+                  description: number.getMeaningOfLifePath(expressionNumber),
+                  image: number.getUrlImage(expressionNumber),
+                ),
+                DescriptionNumberItem(
+                  title: 'Personality Number',
+                  description: number.getMeaningOfLifePath(personalityNumber),
+                  image: number.getUrlImage(personalityNumber),
+                ),
+                DescriptionNumberItem(
+                  title: 'Soul Urge Number',
+                  description: number.getMeaningOfLifePath(soulUrgeNumber),
+                  image: number.getUrlImage(soulUrgeNumber),
+                ),
+              ],
+              onPageChanged: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
             ),
-            DescriptionNumberItem(
-              title: 'Attitude Number',
-              description: number.getMeaningOfLifePath(attitudeNumber),
-              number: number.getUrlImage(attitudeNumber),
-            ),
-            DescriptionNumberItem(
-              title: 'Destiny Number',
-              description: number.getMeaningOfLifePath(destinyNumber),
-              number: number.getUrlImage(destinyNumber),
-            ),
-            DescriptionNumberItem(
-              title: 'Expression Number',
-              description: number.getMeaningOfLifePath(expressionNumber),
-              number: number.getUrlImage(expressionNumber),
-            ),
-            DescriptionNumberItem(
-              title: 'Personality Number',
-              description: number.getMeaningOfLifePath(personalityNumber),
-              number: number.getUrlImage(personalityNumber),
-            ),
-            DescriptionNumberItem(
-              title: 'Soul Urge Number',
-              description: number.getMeaningOfLifePath(soulUrgeNumber),
-              number: number.getUrlImage(soulUrgeNumber),
-            ),
-          ],
-          onPageChanged: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-        ),
+          ),
+          Positioned(
+            top: 2,
+            left: 1,
+            child: IconButton(
+                icon: const Icon(Icons.menu, color: Colors.white),
+                onPressed: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                }),
+          ),
+        ],
       ),
     );
   }

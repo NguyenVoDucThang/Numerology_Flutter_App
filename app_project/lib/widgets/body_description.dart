@@ -7,12 +7,16 @@ class BodyDescription extends StatelessWidget {
   final String title;
   final String number;
   final String description;
+  final double height;
+  final double width;
 
-  const BodyDescription({
+  BodyDescription({
     Key? key,
     required this.title,
     required this.number,
     required this.description,
+    required this.height,
+    required this.width,
   }) : super(key: key);
 
   @override
@@ -42,8 +46,8 @@ class BodyDescription extends StatelessWidget {
           Center(
             child: Image.asset(
               number,
-              height: 200,
-              width: 200,
+              height: height,
+              width: width,
             ),
           ),
         ),

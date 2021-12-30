@@ -8,14 +8,18 @@ import 'body_description.dart';
 
 class DescriptionNumberItem extends StatelessWidget {
   final String title;
-  final String number;
+  final String image;
   final String description;
-
-  const DescriptionNumberItem({
+  double height;
+  double width;
+  DescriptionNumberItem({
     Key? key,
     required this.title,
-    required this.number,
+    required this.image,
     required this.description,
+    this.height = 200,
+    this.width = 200,
+
   }) : super(key: key);
 
   @override
@@ -28,9 +32,11 @@ class DescriptionNumberItem extends StatelessWidget {
         await textToSpeak.speak(description);
       },
       child: BodyDescription(
-        number: number,
+        number: image,
         description: description,
         title: title,
+        height: height,
+        width: width,
       ),
     );
   }

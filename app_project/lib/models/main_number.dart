@@ -191,24 +191,196 @@ class MainNumber {
       case 8:
         return 'The 8 Heart\'s Desire number indicates you are more likely to be drawn to material comforts, money and even power and influence. Your ambition and determination, coupled with a creative mind and the ability to visualize the bigger picture, all combine to help you succeed where others may fail.';
       case 9:
-        return 'The 9 Heart\'s Desire number indicates your tendency toward philanthropism and idealism, and causes that help advance the human race and improve the world as a whole. You can be sensitive and emotional, are more likely to be a perfectionist, and crave approval from the masses for your good deeds and achievements.';
+        return 'The 9 Heart\'s Desire number indicates your tendency toward philanthropist and idealism, and causes that help advance the human race and improve the world as a whole. You can be sensitive and emotional, are more likely to be a perfectionist, and crave approval from the masses for your good deeds and achievements.';
+    }
+    return "";
+  }
+
+  String getLifeAgeFirstCycle(int number) {
+    switch (number) {
+      case 1:
+        return "Age 0 - 26";
+      case 2:
+        return "Age 0 - 34";
+      case 3:
+        return "Age 0 - 33";
+      case 4:
+        return "Age 0 - 32";
+      case 5:
+        return "Age 0 - 31";
+      case 6:
+        return "Age 0 - 30";
+      case 7:
+        return "Age 0 - 29";
+      case 8:
+        return "Age 0 - 28";
+      case 9:
+        return "Age 0 - 27";
+      case 11:
+        return "Age 0 - 34";
+      case 22:
+        return "Age 0 - 32";
+    }
+    return "";
+  }
+
+  String getLifeAgeSecondCycle(int number) {
+    switch (number) {
+      case 1:
+        return "Age 26 - 53";
+      case 2:
+        return "Age 34 - 61";
+      case 3:
+        return "Age 33 - 60";
+      case 4:
+        return "Age 32 - 59";
+      case 5:
+        return "Age 31 - 58";
+      case 6:
+        return "Age 30 - 57";
+      case 7:
+        return "Age 29 - 56";
+      case 8:
+        return "Age 28 - 44";
+      case 9:
+        return "Age 27 - 54";
+      case 11:
+        return "Age 34 - 61";
+      case 22:
+        return "Age 32 - 59";
+    }
+    return "";
+  }
+
+  String getLifeAgeThirdCycle(int number) {
+    switch (number) {
+      case 1:
+        return "From Age 53";
+      case 2:
+        return "From Age 61";
+      case 3:
+        return "From Age 60";
+      case 4:
+        return "From Age 59";
+      case 5:
+        return "From Age 58";
+      case 6:
+        return "From Age 57";
+      case 7:
+        return "From Age 56";
+      case 8:
+        return "From Age 44";
+      case 9:
+        return "From Age 54";
+      case 11:
+        return "From Age 61";
+      case 22:
+        return "From Age 59";
+    }
+    return "";
+  }
+
+  String getLifeFirstCycleMeaning(int number) {
+    switch (number) {
+      case 1:
+        return "In this period you will show a stronger tendency toward independence. Originality and creativity come early and continue through this period. You have the ability to lead early on, but at a time when the emphasis is on learning to follow, this can be a problem. You do have a good deal of early self-confidence and individuality which can help you achieve early successes. You are aggressive in your early career path.";
+      case 2:
+        return "This is a difficult life path period for a young child since it suggests that emotions may run high and sensitivities to many things may be present. On the positive side, this influence may be helpful for developing any artistic talents. The 2 period may be one in which you will be required to be helpful, supportive, and willing to adapt in general. A tendency to have emotional reactions to problems and confrontation may follow you into early adulthood.";
+      case 3:
+        return "The 3 is an excellent lifepath period for a young person because of its inclination toward the development of expression. Any talents you may have in creative or artistic endeavors are encouraged during this period. Emotions may be high and hyperactive tendencies can be present. Making friends and enjoying social interactions will come easily now. Enjoy life as this is the tone of the 3 period, but be careful not to scatter your activities to the point that you fail to make progress on anything.";
+      case 4:
+        return "A 4 life path period is not much fun for a young person. It suggests that learning is difficult or the demands placed upon you to learn were harsh and burdensome. Now you have to build a solid foundation and the tone is one of learning practicality, order, and routine. Often this period denotes growing up with limited resources or restrictions of some sort. The demands often set the stage for later successes. You are to be very well prepared to start your career in early adulthood.";
+      case 5:
+        return "The 5 period early in life can be difficult because it often lacks the stability and certainty that you may wish for. This period often features changes and emphases freedom of thought and activity. You are likely to be constantly looking for something new, something exciting, something less boring to stimulate your expansive mind. During this time you will be an explorer and a wanderer. Whether this is a positive or a negative trait only time will tell. At any rate you are driven by curiosity and adventure.";
+      case 6:
+        return "The 6 period produces a need to be needed, and you probably want to help your parents or your brothers, sisters, and friends in whatever way you can. In some cases, this period is one in which the subject is required or somehow forced to take on more than a normal amount of responsibility at an early age. Generally, this early time in the life is marked by obvious attempts to be helpful and even nurturing to others. In early adulthood there is a strong sense of responsibility and caring.";
+      case 7:
+        return "If there is a problem with the 7 period in early life it is being misunderstood or considered difficult. In this period you may have the sense that you are different from your peers. You repel conformity. The 7 period makes you inclined to seek and absorb learning as a primary focus. The fact that you don't feel very comfortable in your environment is to be expected. Your natural curiosity and inquisitive mind will take you far during this period.";
+      case 8:
+        return "An 8 period in early life stresses the practical and the material. This is not the stuff of a good childhood experience as it may tend to elevate the importance of material success at an inappropriate age. For the less affluent, there may be too much interest in achieving material goals. This period may have its positive side in preparing a relatively young person for financial and material success. You may go into business early in life with the tools to succeed.";
+      case 9:
+        return "The 9 lifepath is difficult for a young person because so much is expected of them in terms of feeling compassion and tolerance. The youthful years are by nature selfish years and the 9 period stifles this sense of being self absorbed. While the upbringing under this influence can be helpful in the future, often the period brings periods of feeling lonely, unappreciated and unsure of self. The lesson of the 9 is that life is universal rather than personal, and thus, those with this early path may have a head start.";
+      case 11:
+        return "Age 0 - 34";
+      case 22:
+        return "Age 0 - 32";
+    }
+    return "";
+  }
+
+  String getLifeSecondCycleMeaning(int number) {
+    switch (number) {
+      case 1:
+        return "In this period you will have more drive and determination thanks to the 1 life path period. If you have other indicators that you would do well in business for yourself, this life path period would be time to move in that direction. Your demeanor now is highly independent and leadership skills are sharpened. The potential pitfalls here are letting ego go a little out of control and perhaps showing a lack of patience at times.";
+      case 2:
+        return "The 2 lifepath period suggests that you will profit from your ability to work together with others in harmony and cooperation. In these years your ability to use skills in diplomacy and mediation will be pronounced. The affairs of others and their success may be the key to your own advancement. Pushing your own agenda doesn't work as well now. The need is to control hyperactive emotions that may appear from time to time.";
+      case 3:
+        return "This is likely to be a very pleasant, carefree and creative time in your life. Being original and using your talents of expression will find you furthering your career and your life in general. If there is a pitfall during this time it is becoming overly optimistic and extravagant, and spreading your talents too thin. In all this is a period that offers much happiness in exchange for a minimum of planning and concentration.";
+      case 4:
+        return "This period is a time to build and develop ideas into a tactile form. Now is a time that you become more of a builder, a better organizer, and perhaps even a more stable and secure person. Your judgment and decisions take on more conservatism and practicality, and they are based on careful and more thoughtful planning. You are apt to be more serious about your work and perhaps devote more time to it, too. Be careful not to become a workaholic. With a 4 lifepath period you must be constantly reminded to take the time to smell the roses.";
+      case 5:
+        return "In this period you are ever ready to accept change, progress, and new ideas. Likewise you are quick, some times too quick, to dump the old, old jobs, old activities, even old relationships. Sometimes this is good, sometime not so good. At any rate this 5 period suggests that you are more impulsive now and the test will be to see if you can handle the increased freedom you are feeling with constructive judgment. If so, you will find this is a period that can and should produce remarkable results.";
+      case 6:
+        return "Through these years you will find yourself getting ahead only after you have made the personal sacrifices necessary to benefit others in need. Much of your life in this period will tend to be centered around your home and family. This is not a period that lends itself to dramatic enrichment because you tend to be more selfless and less demanding of personal rewards. Your opportunities may be as an idealist, a mediator, and perhaps even a leader in your community. Certainly the focus of the period is associated with family and domestic concerns.";
+      case 7:
+        return "The 7 period in the productive years is excellent for one continuing studies and analysis into mid life. The tendency is to strive for mental growth and development and you are apt to be in the process of expanding your areas of interest now. This period is a plus if you are engaged in academic pursuits, but otherwise progress may be slow. It is hard to force yourself to seek opportunity now, and if you do, it will probably be to no avail. Perhaps it will come to you if you get prepared.";
+      case 8:
+        return "The 8 lifepath period in the productive years may push you to a level of success that would not have otherwise been attained. This period denotes a time when attainment, authority, and general business acumen is brought to foreground. You will want to set your goals high and do everything in a big way. If you have the inherent management abilities, this period will accelerate your prestige and attainments.";
+      case 9:
+        return "With the 9 in the productive years you may find yourself becoming more of a humanitarian. You may find it easier to express compassion, sympathy, understanding and tolerance while in this period. This can be an emotional cycle and one of significant personal growth. You may be called on to overcome disappointments and setbacks, but the potential for gain in this period is significant.";
+      case 11:
+        return "Age 0 - 34";
+      case 22:
+        return "Age 0 - 32";
+    }
+    return "";
+  }
+
+  String getLifeThirdCycleMeaning(int number) {
+    switch (number) {
+      case 1:
+        return "New challenges may continue to appear even in your later years. In this period you may achieve the recognition that eluded you earlier, and this may mean it will be hard to kick back and take life easy. A 1 life path period does not lend itself to early retirement and leisure activities. Indeed, this may become the most active time of your life.";
+      case 2:
+        return "The 2 lifepath period in the later years promises a good retirement with many friends and opportunities. Your influence now will be based on your ability to bring together diverse opinions and ideas. Friends and family, and especially a close relationship is all important to your happiness now. Having close connections is vital to your health and wellbeing in your senior years.";
+      case 3:
+        return "A 3 period in later life suggests an active social life with numerous hobbies and activities. If you are a creative person, this late life period may become your most prolific and fruitful. Indeed, this may be the time to write that book you have thought about, a time to learn a new method of expression perhaps, or simply let your imagination run free. Enjoy yourself, it won't be that terribly hard now.";
+      case 4:
+        return "The 4 period in the later years suggests a period that predicts work rather than retirement. Whether by choice or by necessity, you are apt to keep your nose to the grindstone a lot longer than most of your peers. Even if you do retire, you will want to keep working on hobbies and avocation long after others have opted for the rocking chair. If you own your own business, it may be hard to accept that fact that things can run without your ever present attention.";
+      case 5:
+        return "With the 5 period occurring late in life, be prepared for a never ending series of adventures and expansive travel so long as the resources hold out. Actually, however, many with a late life 5 period choose to continue to work because of the sense of freedom found in their endeavors now; so long as the work is not boring or routine, there may be no reason to quit. This influence will continue to send you off to find new challenges and try new things. You are never too old to learn.";
+      case 6:
+        return "The 6 period late in life is usually a happy and content time. It denotes a tendency to accept responsibility and lend a helping hand to those around you. You are not likely to be lonely in your later years since family and domestic matters will probably be emphasized during this time. Indeed, you may help or even be responsible for rearing a grandchild or two.";
+      case 7:
+        return "When the 7 period occurs in later life you may find yourself engaged in study as never before in your life. This period may find you writing more, engaged in some form of research, or venturing into new and interesting subjects. This is not a very social period and indeed there is concern that you may become increasingly isolated by your own choosing.";
+      case 8:
+        return "With the 8 lifepath period in later life, it is suggested that your greatest achievements may be yet to come. If all you have lacked before is good management, now may be your time to shine. In retirement you may find yourself deeply involved in clubs, organizations and perhaps government entities. Your contribution to these can be important for your sense of accomplishment and for your social life at this time.";
+      case 9:
+        return "The 9 period in the later years generally signifies a settled and happy life at this juncture. You are inclined to positive feelings toward the world, and you will want to share your experiences to a greater extent. You may engage in many positive works benefiting mankind or just a few needy souls in your immediate environment. The lesson of the number is learning to give without expecting to get something back. If you have learned this by this time, this period may well be the best part of your life.";
+        return "Age 0 - 34";
+      case 22:
+        return "Age 0 - 32";
     }
     return "";
   }
 }
 
 class Numerology with ChangeNotifier {
+  bool isGetNumber = false;
   MainNumber numerology = MainNumber(
     birthday: DateTime.now(),
     name: 'Nguyen Vo Duc Thang',
   );
 
-  void setName (String newName) {
+  void changeGetNumberStatus() {
+    isGetNumber = true;
+  }
+
+  void setName(String newName) {
     numerology.name = newName;
     notifyListeners();
   }
 
-  void setBirthday (DateTime newBirthday) {
+  void setBirthday(DateTime newBirthday) {
     numerology.birthday = newBirthday;
     notifyListeners();
   }
