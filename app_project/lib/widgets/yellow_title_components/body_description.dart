@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_project/models/main_number.dart';
 import 'package:flutter/material.dart';
-import 'animation.dart';
+import '../animation.dart';
 
 class BodyDescription extends StatelessWidget {
   final String title;

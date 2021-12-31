@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'animation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-import 'body_description.dart';
+import 'yellow_title_components/body_description.dart';
 
 class DescriptionNumberItem extends StatelessWidget {
   final String title;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
 
-import 'body_personal_year_item.dart';
+import 'yellow_title_components/body_personal_year_item.dart';
 
 class PersonalYearItem extends StatelessWidget {
   const PersonalYearItem({Key? key}) : super(key: key);

@@ -32,8 +32,8 @@ class PersonalYearScreen extends StatelessWidget {
             child: PageView(
               controller: controller,
               scrollDirection: Axis.vertical,
-              children: [
-                const NineYearsCycleItem(),
+              children: const [
+                NineYearsCycleItem(),
                 PersonalYearItem(),
               ],
             ),

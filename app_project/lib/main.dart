@@ -1,7 +1,9 @@
 import 'package:app_project/view/complete_sign_up_screen/get_information_screen.dart';
 import 'package:app_project/view/onboarding/onboarding_screen.dart';
+import 'package:app_project/view/screens/address_number_screen/get_address_number_screen.dart';
 import 'package:app_project/view/screens/life_cycle_screen.dart';
-import 'package:app_project/view/screens/personal_year_screen.dart';
+import 'package:app_project/view/screens/personal_year_screen/personal_year_screen.dart';
+import 'package:app_project/view/screens/phone_number_screen/get_phone_number_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app_project/view/screens/main_screen.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -42,6 +44,8 @@ class MyApp extends StatelessWidget {
           MainScreen.routeName: (context) => const MainScreen(),
           PersonalYearScreen.routeName: (context) => PersonalYearScreen(),
           LifeCycleScreen.routeName: (context) => const LifeCycleScreen(),
+          GetPhoneNumberScreen.routeName: (context) => const GetPhoneNumberScreen(),
+          GetAddressScreen.routeName: (context) => const GetAddressScreen(),
         },
       ),
     );

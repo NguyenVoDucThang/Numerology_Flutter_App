@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-import 'body_nine_years_cycle_item.dart';
+import 'yellow_title_components/body_nine_years_cycle_item.dart';
 
 class NineYearsCycleItem extends StatelessWidget {
   const NineYearsCycleItem({Key? key}) : super(key: key);

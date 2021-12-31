@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-import 'animation.dart';
+import '../animation.dart';
 
 class BodyNineYearsCycleItem extends StatelessWidget {
   final String script;

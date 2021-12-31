@@ -40,6 +40,54 @@ class MainNumber {
     return "";
   }
 
+  String getUrlPhoneNumImage(int number) {
+    switch (number) {
+      case 1:
+        return 'assets/images/num1.png';
+      case 2:
+        return 'assets/images/num2.png';
+      case 3:
+        return 'assets/images/num3.png';
+      case 4:
+        return 'assets/images/num4.png';
+      case 5:
+        return 'assets/images/num5.png';
+      case 6:
+        return 'assets/images/num6.png';
+      case 7:
+        return 'assets/images/num7.png';
+      case 8:
+        return 'assets/images/num8.png';
+      case 9:
+        return 'assets/images/num9.png';
+    }
+    return "";
+  }
+
+  String getUrlAddressNumImage(int number) {
+    switch (number) {
+      case 1:
+        return 'assets/images/house_num1.png';
+      case 2:
+        return 'assets/images/house_num2.png';
+      case 3:
+        return 'assets/images/house_num3.png';
+      case 4:
+        return 'assets/images/house_num4.png';
+      case 5:
+        return 'assets/images/house_num5.png';
+      case 6:
+        return 'assets/images/house_num6.png';
+      case 7:
+        return 'assets/images/house_num7.png';
+      case 8:
+        return 'assets/images/house_num8.png';
+      case 9:
+        return 'assets/images/house_num9.png';
+    }
+    return "";
+  }
+
   String getMeaningOfLifePath(int number) {
     switch (number) {
       case 1:
@@ -359,6 +407,103 @@ class MainNumber {
         return "Age 0 - 34";
       case 22:
         return "Age 0 - 32";
+    }
+    return "";
+  }
+
+  int getPhoneNumberNumerology(String number) {
+    int num = int.parse(number);
+    int sum = 0;
+    String processNum = number;
+    int result = num;
+    while (result > 9) {
+      for (int i = 0; i < processNum.length; i++) {
+        sum += int.parse(processNum[i]);
+      }
+      processNum = sum.toString();
+      if (sum > 9) {
+        result = sum;
+        sum = 0;
+      } else {
+        result = sum;
+      }
+    }
+    return result;
+  }
+
+  
+  
+  int getHouseNumberNumerology(String address) {
+    String processNum = '';
+    for (int i = 0; i < address.length; i++) {
+      if(int.tryParse(address[i]) != null) {
+        processNum = processNum + address[i];
+      }
+    }
+    if(processNum == '') return 0;
+    int num = int.parse(processNum);
+    int sum = 0;
+
+    int result = num;
+    while (result > 9) {
+      for (int i = 0; i < processNum.length; i++) {
+        sum += int.parse(processNum[i]);
+      }
+      processNum = sum.toString();
+      if (sum > 9) {
+        result = sum;
+        sum = 0;
+      } else {
+        result = sum;
+      }
+    }
+    return result;
+  }
+
+  String getHouseNumberMeaning(int number){
+    switch (number) {
+      case 1:
+        return 'Independence, Innovation, Strength\nThe number one home is a good space for self-employed people or single people, as the energy of the home encourages you to maintain your independence, autonomy, and personal freedom. In fact, it has exactly the right energy for someone starting a business, working from home, or just looking to discover more about themselves.';
+      case 2:
+        return 'Nurturing, Cozy, Sensitive\nThe number two home is the polar opposite to a number one home. It’s a home built for belonging, and Felicia Bender writes “its energy promotes loving relationships, devotion to the group as a whole, and is a harmonious place to live.” It’s a good home for romantic partners, young families and roommates who are good friends, as people feel nurtured and comfortable here.';
+      case 3:
+        return 'Entertaining, Creative, Upbeat\nNumerologists believe that the number three has creative vibrations, so the number three home is a good place for artists or anyone in a creative field. But it’s also a great environment for social gatherings, entertaining at home and just generally living life to the fullest. Felicia Bender writes that the number three home is “perfect for hosting parties and get togethers with fascinating people.”';
+      case 4:
+        return 'Practical, Protected, Grounded\nIn numerology, the number four has a very serious, grounded vibration—so it follows that the number four home supports discipline, structure and responsibility. It’s a great place to expand a business, grow your family or take control of your finances, according to Kari Samuels, as discipline, structure, and responsibility are supported here: “This is a wonderful place if you prefer stability to change, or at least want your home to be conventional, even if the rest of your life is adventurous!”';
+      case 5:
+        return 'Active, Social, Dynamic\nThe number five house is a party house. It maintains a vibrant energy and is a great place for people who love having people over and entertaining guests. But because the number five promotes variety and change, according to Kari Samuels, you might find you’re not here long. She adds “if you’re looking for quiet, reflection, or stability, you won’t find it here.” But your time in the five house is sure to impart life-long lessons.';
+      case 6:
+        return 'Love, Harmony, Family\nThe ideal home for families, the number six home is a sanctuary where everyone feels welcome. Children and animals thrive here. Actually, everyone (including your guests) will feel “at-home” with the number six—the most domestic number of numerology. Kari Samuels suggests that six house dwellers embrace the nurturing energy by decorating with comfortable furniture and lots of plants.';
+      case 7:
+        return 'Reflective, Introspective, Spiritual\nKari Samuels tells us that the number seven maintains a private vibration “and can be somewhat secretive.” So any home bearing this number will inspire deep thought and reflection—making it a good home for introverts or anyone who loves coming home to have a quiet place to reflect. “It is important that you eliminate any clutter in your environment as well as your thoughts to harmonize with your home’s energy,” Samuels adds.';
+      case 8:
+        return 'Prosperity, Abundance, Ambition\nA number eight home supports growth and ambition—making it a great space for entrepreneurs and career-driven people, especially if you run a business from home. “If you are wanting to expand your status in the world, position in life, financial wealth, or size of your family, this is a great home for you,” writes Kari Samuels. But all of that upward-mobility means that a number eight home isn’t best for anyone who wants their home to be a relaxed environment. “People who live here can become workaholics,” Felicia Bender writes.';
+      case 9:
+        return 'Compassion, Acceptance, Community\nEveryone is drawn to the number nine home’s vibe—it has a loving energy that attracts touch-ins and visits from everyone, from all over the world (in numerology, the number nine is an “international” number). You’ll learn a great deal about yourself and others from living here: “The 9 home is a place of humanitarianism,” writes Felicia Bender.';
+    }
+    return "";
+  }
+
+  String getPhoneNumberMeaning(int number){
+    switch (number) {
+      case 1:
+        return "Number one is  strong, masculine traits which  helps to improve your personal supremacy with your influence on  others. However, be careful not to be overconfident. This is a good number for any self-starter, politician, or entrepreneur business people and career oriented people as well. Due to lack of sensitivity and awareness this number is not so good for bachelors who are looking for a life partner.";
+      case 2:
+        return "This number is ideal for the people who want to meet up love and romance. This number is having characteristic of kindness, cooperative to adjust the people and diplomatic as well. This number is not good for Salesmen, should stay away from this number. This is also a good number for any service oriented business, like restaurants, caregivers, and salons. ";
+      case 3:
+        return "Personifying, creativity and playfulness, these are qualities of Number Three. This is a good number for artists, musicians, and young people. This number is inspiring, motivating, and with having original qualities. This number has a tendency to attract others. This number is excellent for authors and songwriters; it is not so good for motivated and goal-oriented people";
+      case 4:
+        return "Stable, grounded, dependable, analytical and reliable, this number is very good for people associated with Accounting and Law firms businesses that have to work on to increase the trust and reputations This Number is also good for large families ";
+      case 5:
+        return "With a surplus of adventure and change, this number  not gives stability. With this number, you can at all times expect the unexpected. This is a good number for sales people, activist persons and travelers. Due to lack of discipline and responsibility families should always avoid using this number.";
+      case 6:
+        return "This number is warm, helpful, and protective, thus Ideal for families having all the qualities required for a nurturing environment which strengthens family and friendships. Number 6 inspires gossip, and thus may not be good for business. Bachelors looking for a life partner should avoid this number.  The number six is suits for teachers and schools.";
+      case 7:
+        return "Number 7 is having spiritual qualities; hence this number is superlative for scholars and free thinkers. Number 7 helps to improve mental health and stability. Nevertheless, it’s not so good number for entrepreneur.  This Number is  not good  for finding friends or a romance.";
+      case 8:
+        return "This is the perfect number for businesses men since it attracts money with reliability. It is suitable for the ambitious and motivated individuals who work to achieve their goals. Eight is a rather materialistic number which provides positive effect on career and financial condition. Thus Practical and materialistic, this can’t work as good for individuals looking for spiritual growth.  If you have a triple 8 in your phone number, it is considered to be especially fortunate.";
+      case 9:
+        return "This number brings idealism and kindness, and works very well for the people associated with health service or health oriented enterprises. Owners of this number will often experience the favor of luck. This is the number of non-materialistic qualities so it good works for non-profit groups. This may be the “luckiest” of all the numbers, it occasionally leads to financial downfalls when you expect it slightest. People with health problems, should keep away from this number. It can bring problems in relationships.";
     }
     return "";
   }
