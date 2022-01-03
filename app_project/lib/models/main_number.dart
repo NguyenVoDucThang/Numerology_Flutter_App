@@ -430,8 +430,6 @@ class MainNumber {
     }
     return result;
   }
-
-  
   
   int getHouseNumberNumerology(String address) {
     String processNum = '';
