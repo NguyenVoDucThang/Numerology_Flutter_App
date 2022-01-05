@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
               FadeAnimation(
                 0.4,
                 Text(
-                  'Phone number',
+                  'Address number',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 28,
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
               FadeAnimation(
                 0.5,
                 Text(
-                  'Tell me about phone number\nI\'ll show your number and also its meaning',
+                  'Tell me about address number\nI\'ll show your number and also its meaning',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     height: 1.5,
